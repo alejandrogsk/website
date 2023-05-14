@@ -18,7 +18,7 @@ const Projects = () => {
     let project = projects[0];
   return (
     <div className='min-h-screen py-40'>
-        <div className='grid grid-cols-2 border-[1px] border-white rounded-[20px] overflow-hidden'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 border-[1px] border-white rounded-[20px] overflow-hidden'>
             <div className='py-16 px-8 flex flex-col'>
                 <h2 className='font-anton text-[2.5rem] leading-[3.75rem] uppercase big:text-[5rem]'>{project.title}</h2>
                 <p className='text-cGrey-main'>{project.desc}</p>
