@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+
+* {   
+    font-family: 'Inter', sans-serif;
+}
+html { 
+    color: white; 
+    background-color: black;
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+  }
+  
+h1 {
+    font-family: 'Anton', sans-serif;
+}
