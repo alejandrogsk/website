@@ -25,7 +25,7 @@ const images = [
 
 const Carousel = () => {
     return (
-        <div className="relative py-40 px-4">
+        <div className="relative py-6 md:py-12 lg:py-20  px-4">
             <div className="carousel-container">
                 <Swiper
                     loop={true}
@@ -36,11 +36,12 @@ const Carousel = () => {
                     breakpoints={{
                         0: {
                             slidesPerView: 2,
-                            spaceBetween: 50,
+                            spaceBetween: 15,
                         },
                         // when window width is >= 640px
                         540: {
                             slidesPerView: 3,
+                            spaceBetween: 35
                         },
                         // when window width is >= 768px
                         800: {

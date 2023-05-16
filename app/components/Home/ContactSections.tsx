@@ -4,8 +4,8 @@ const ContactSections = () => {
     const data = useActionData();
 
     return (
-        <div id="contact" className="grid grid-cols-1 items-center justify-center py-40 ">
-            <h2 className='font-anton text-[2.5rem] leading-[3.75rem] uppercase big:text-[5rem]'>I want to hear about your project</h2>
+        <div id="contact" className="grid grid-cols-1 items-center justify-center py-20 md:py-32 lg:py-40 ">
+            <h2 className='font-anton  uppercase text-[1.8rem] lg:text-[2.5rem] big:text-[3.125rem] big:leading-[3.75rem]'>I want to hear about your project</h2>
 
             <Form method="post" className="mt-28 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-20">
                 <div className="flex flex-col">

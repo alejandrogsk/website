@@ -9,9 +9,9 @@ const data = [
 
 const Companies = () => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-2 items-center  min-h-screen py-40 gap-20'>
+    <div className='grid grid-cols-1 lg:grid-cols-2 items-center  min-h-screen py-20 md:py-32 lg:py-40  gap-20'>
         <div>
-        <h2 className='font-anton text-[3.125rem] leading-[3.75rem] uppercase big:text-[5rem]'>What kind of companies do I work with?</h2>
+        <h2 className='font-anton text-[1.8rem] lg:text-[2.5rem] big:text-[3.125rem] big:leading-[3.75rem] uppercase big:text-[5rem]'>What kind of companies do I work with?</h2>
         <div className='grid grid-cols-1 gap-[1rem] big:gap-[5rem] my-[4rem]'>
             {
                 data.map((paragraph, i)=>(

@@ -137,7 +137,6 @@ export default function Index() {
         <Layout><Hero /></Layout>
         <Layout><Companies /></Layout>
         <Layout><Projects /></Layout>
-        <Layout><Companies /></Layout>
         <Layout><ServiceGrid services={services}/></Layout>
       <Carousel />
         <Layout><ServiceGrid services={platforms}/></Layout>
