@@ -15,6 +15,7 @@ html {
     color: white; 
     background-color: black;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 body {

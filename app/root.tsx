@@ -10,6 +10,7 @@ import {
 } from "@remix-run/react";
 import stylesheet from "~/tailwind.css";
 import Navigation from "./components/Home/Layout/Navigation";
+import Footer from "./components/Home/Layout/Footer";
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel:"stylesheet", href: "https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@200;300;400;500;600;700&display=swap" },
@@ -32,6 +33,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+      <Footer />
       </body>
     </html>
   );

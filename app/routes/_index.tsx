@@ -26,6 +26,7 @@ import {
   validationError,
 } from "remix-validated-form";
 import { z } from "zod";
+import LayoutX from "~/components/Home/Layout/LayoutX";
 //This works well
 // const GET_HOME_PAGE = gql`
 //   query getAllHomePage( $id: String = "28CPDaPE6St64rJJcezSSO"){
@@ -134,13 +135,13 @@ export default function Index() {
 
     return (
       <div className="">
-        <Layout><Hero /></Layout>
-        <Layout><Companies /></Layout>
-        <Layout><Projects /></Layout>
-        <Layout><ServiceGrid services={services}/></Layout>
+        <LayoutX><Hero /></LayoutX>
+        <LayoutX><Companies /></LayoutX>
+        <LayoutX><Projects /></LayoutX>
+        <LayoutX><ServiceGrid services={services}/></LayoutX>
       <Carousel />
-        <Layout><ServiceGrid services={platforms}/></Layout>
-        <Layout><ContactSections /></Layout>
+        <LayoutX><ServiceGrid services={platforms}/></LayoutX>
+        <LayoutX><ContactSections /></LayoutX>
       
       
       
@@ -151,11 +152,3 @@ export default function Index() {
 }
 
 
-const Layout = ({children}:{children:ReactElement}) => {
-
-  return(
-    <div className="grid grid-cols-1 max-w-[95%] md:max-w-[80%] mx-auto">
-{children}
-    </div>
-  )
-}

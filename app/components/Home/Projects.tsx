@@ -57,9 +57,9 @@ const Projects = () => {
 
                 <p className='text-cGrey-main'>{project.desc}</p>
 
-                <a className='mt-auto font-anton cursor-pointer underline hover:text-cGrey-main'>View More</a>
+                <a className='mt-6 lg:mt-auto font-anton cursor-pointer underline hover:text-cGrey-main'>View More</a>
             </div>
-            <div className='grid place-content-center max-w-full row-start-1 lg:row-start-2 mb-12 lg:mb-0'>
+            <div className='grid place-content-center max-w-full row-start-1 lg:col-start-2 lg:row-start-2 mb-8 lg:mb-0'>
                 <img src={project.img} alt={`${project.title} image`} width={692} height={400}/>
             </div>
         </div>

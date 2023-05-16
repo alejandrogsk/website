@@ -5,7 +5,7 @@ const ContactSections = () => {
 
     return (
         <div id="contact" className="grid grid-cols-1 items-center justify-center py-20 md:py-32 lg:py-40 ">
-            <h2 className='font-anton  uppercase text-[1.8rem] lg:text-[2.5rem] big:text-[3.125rem] big:leading-[3.75rem]'>I want to hear about your project</h2>
+            <h2 className='font-anton text-center uppercase text-[1.8rem] lg:text-[2.5rem] big:text-[3.125rem] big:leading-[3.75rem]'>I want to hear about your project</h2>
 
             <Form method="post" className="mt-28 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-20">
                 <div className="flex flex-col">
@@ -66,7 +66,11 @@ const ContactSections = () => {
                 {data?.message && (
                     <span className="text-blue-400">{data.message}</span>
                 )}
-                <button type="submit">Submit</button>
+                <button type="submit"
+                className="border-[1px] border-white py-2 px-6 rounded-[20px] hover:bg-white hover:text-black inline-flex justify-center align-center md:mr-auto
+                transition-all
+                "
+                >Submit</button>
             </Form>
         </div>
     );
