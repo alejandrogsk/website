@@ -1,29 +1,14 @@
-import React from "react";
-import BigCommerce from "../assets/brands/BigCommerce.webp";
-import Contentful from "../assets/brands/Contentful.webp";
-import DatoCMS from "../assets/brands/DatoCMS.webp";
-import Prismic from "../assets/brands/Prismic.webp";
-import Sanity from "../assets/brands/Sanity.webp";
-import Shopify from "../assets/brands/Shopify.webp";
-import Snipcart from "../assets/brands/Snipcart.webp";
-import Strapi from "../assets/brands/Strapi.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper";
-const images = [
-    Strapi,
-    Shopify,
-    BigCommerce,
-    Contentful,
-    Prismic,
-    Sanity,
-    Snipcart,
-    DatoCMS,
-];
+import { useLoaderData } from "@remix-run/react";
+import { loader } from "~/routes/_index";
 
 const Carousel = () => {
+    const { results } = useLoaderData<typeof loader>();
+    const { carouselCollection } = results.home
     return (
         <div className="relative py-6 md:py-12 lg:py-20  px-4">
             <div className="carousel-container">
@@ -57,11 +42,13 @@ const Carousel = () => {
                         },
                     }}
                 >
-                    {images.map((image, i) => (
+                    {carouselCollection.items.map((image, i) => (
                         <SwiperSlide key={i}>
                             <img
-                                src={image}
+                                src={image.url}
+                                width={80} height={250}
                                 className="block h-auto w-full max-h-[80px] max-w-[250px]"
+                                alt={image.description??`Image number ${i}`}
                             />
                         </SwiperSlide>
                     ))}

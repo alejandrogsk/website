@@ -2,10 +2,11 @@ import React from 'react'
 
 type Service = {
     title?: string;
-    image?:{
+    companiesImage?:{
         url:string;
+        description?: string;
     };
-    description: string
+    text: string
 }
 const ServiceGrid = ({services}:{services:Service[]}) => {
   return (
@@ -17,14 +18,14 @@ const ServiceGrid = ({services}:{services:Service[]}) => {
                 className='last:mt-20'
                 >
                     {
-                        service?.image && 
-                        <img src={service.image.url} alt={`Image number ${i}`} width={320} height={80} className='h-[3.75rem] w-auto '/> 
+                        service?.companiesImage && 
+                        <img src={service.companiesImage.url} alt={`${service.companiesImage.description ?? `Image number ${i}`}`} width={320} height={80} className='h-[3.75rem] w-auto '/> 
                     }
                     {
                         service?.title && 
                         <h2 className='font-anton text-[1.8rem] lg:text-[2.5rem] big:text-[3.125rem] big:leading-[3.75rem] uppercase '>{service.title}</h2>
                     }
-                    <p className='text-cGrey-main mt-6'>{service.description}</p>
+                    <p className='text-cGrey-main mt-6'>{service.text}</p>
                     <a className='inline-block mt-8 font-anton cursor-pointer underline hover:text-cGrey-main'>View More</a>
                 </div>
             ))

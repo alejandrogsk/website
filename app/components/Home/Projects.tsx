@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react'
 import image from "../../assets/project.png"
-import {motion, useAnimation} from "framer-motion"
-import { useInView } from 'react-intersection-observer'
 const projects = [
     {
         title: "Forms Render podcast",
@@ -44,8 +41,8 @@ const Projects = () => {
   return (
     <div className='min-h-screen py-20 md:py-32 lg:py-40 grid grid-cols-1 gap-20'>
         {
-            projects.map((project) => (
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-2 overflow-hidden'>
+            projects.map((project, i) => (
+                <div key={i} className='grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-2 overflow-hidden'>
                 <h2 className='col-start-1 lg:col-end-3 font-anton text-[1.8rem] lg:text-[2.5rem] big:text-[3.125rem] big:leading-[3.75rem] uppercase big:text-[5rem]'>{project.title}</h2>
             <div className=' flex flex-col'>
 
