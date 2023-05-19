@@ -22,7 +22,7 @@ export const loader = async (): Promise<{ ok: boolean; results: {home: IHomePage
     id: "1qwQQiqgCH7aLvH4KdgrHa" //Home page ID
   });
 
-  const reqProjects = await client.request(GET_HOME_PAGE_PROJECTS)
+  const reqProjects = await client.request(GET_HOME_PAGE_PROJECTS, {limit: 3})
 
   return { ok: true, results: {home: reqHome.homePage, projects: reqProjects} };
 };
@@ -45,6 +45,8 @@ export async function action({request}:ActionArgs) {
 export default function Index() {
     const { results } = useLoaderData<typeof loader>();
     const { servicesCollection, technologiesCollection } = results.home
+
+    console.log(servicesCollection, technologiesCollection )
     return (
       <div>
         <LayoutX>
