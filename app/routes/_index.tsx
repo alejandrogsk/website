@@ -44,9 +44,7 @@ export async function action({request}:ActionArgs) {
 
 export default function Index() {
     const { results } = useLoaderData<typeof loader>();
-
     const { servicesCollection, technologiesCollection } = results.home
-    console.log(results.projects)
     return (
       <div>
         <LayoutX>

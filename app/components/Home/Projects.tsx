@@ -7,18 +7,6 @@ const projects = [
         tools: ["Strapi CMS", "NextJs 13"]
     },
     {
-        title: "Vicente Gutiérrez portfolio",
-        desc: "Ut repellendus totam est facilis accusantium vel ducimus dolore. Ad beatae repellat ut unde nobis hic culpa dolor rem eligendi dicta et eaque nesciunt id rerum excepturi. Vel facere eaque eum quae ullam sit optio officiis. Et consequuntur autem nam odio sint sed quos quasi qui sint fugit.",
-        img: image,
-        tools: ["Strapi CMS", "NextJs 13"]
-    },
-    {
-        title: "Studio Ademas Website",
-        desc: "Ut repellendus totam est facilis accusantium vel ducimus dolore. Ad beatae repellat ut unde nobis hic culpa dolor rem eligendi dicta et eaque nesciunt id rerum excepturi. Vel facere eaque eum quae ullam sit optio officiis. Et consequuntur autem nam odio sint sed quos quasi qui sint fugit.",
-        img: image,
-        tools: ["Strapi CMS", "NextJs 13"]
-    },
-    {
         title: "The site that you are lookig right now",
         desc: "Ut repellendus totam est facilis accusantium vel ducimus dolore. Ad beatae repellat ut unde nobis hic culpa dolor rem eligendi dicta et eaque nesciunt id rerum excepturi. Vel facere eaque eum quae ullam sit optio officiis. Et consequuntur autem nam odio sint sed quos quasi qui sint fugit.",
         img: image,
