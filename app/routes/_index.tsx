@@ -13,18 +13,22 @@ import {
 } from "remix-validated-form";
 import LayoutX from "~/components/Home/Layout/LayoutX";
 import { IHomePage } from "~/types/HomePage";
-import {GET_HOME_PAGE, GET_HOME_PAGE_PROJECTS} from "~/graphql/querys/HomePage";
+import {GET_HOME_PAGE} from "~/graphql/querys/HomePage";
 import validator from "~/utils/FormValidation";
+import { Project } from "~/types/Project";
+import { GET_PROJECTS } from "~/graphql/querys/Projects";
 
-export const loader = async (): Promise<{ ok: boolean; results: {home: IHomePage, projects: any} }> => {
+export const loader = async (): Promise<{ ok: boolean; results: {home: IHomePage, projects: Project[]} }> => {
   const client = gqlClient();
   const reqHome = await client.request<{ homePage: IHomePage }>(GET_HOME_PAGE, {
     id: "1qwQQiqgCH7aLvH4KdgrHa" //Home page ID
   });
 
-  const reqProjects = await client.request(GET_HOME_PAGE_PROJECTS, {limit: 3})
+  const reqProjects:{projectCollection: {items: Project[]}} = await client.request(GET_PROJECTS, {limit: 3})
 
-  return { ok: true, results: {home: reqHome.homePage, projects: reqProjects} };
+  const projects = reqProjects.projectCollection.items
+
+  return { ok: true, results: {home: reqHome.homePage, projects } };
 };
 
 export const meta: V2_MetaFunction<typeof loader> = ({
@@ -45,15 +49,13 @@ export async function action({request}:ActionArgs) {
 export default function Index() {
     const { results } = useLoaderData<typeof loader>();
     const { servicesCollection, technologiesCollection } = results.home
-
-    console.log(servicesCollection, technologiesCollection )
     return (
       <div>
         <LayoutX>
          <>
          <Hero />
           <Companies />
-          <Projects />
+          <Projects projects={results.projects} />
           <ServiceGrid services={servicesCollection.items}/>
           </>
         </LayoutX>

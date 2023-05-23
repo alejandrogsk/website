@@ -1,20 +1,6 @@
 import { gql } from "graphql-request";
 
-export const GET_HOME_PAGE_PROJECTS = gql`
-  query getHomePageProjects($limit: Int = 2) {
-    projectCollection(limit: $limit){
-    items {
-      title
-      description
-      tech
-      image {
-        url
-        description
-      }
-    }
-  }
-  }
-`
+
 
 
 export const GET_HOME_PAGE = gql`

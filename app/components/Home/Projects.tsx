@@ -1,10 +1,10 @@
 import { useLoaderData } from "@remix-run/react";
 import { loader } from "~/routes/_index";
+import { Project } from "~/types/Project";
 
-const Projects = () => {
 
-    const { results } = useLoaderData<typeof loader>();
-    const projects = results.projects.projectCollection.items
+
+const Projects = ({projects}: { projects: Project[] }) => {
   return (
     <div className='min-h-screen py-20 md:py-32 lg:py-40 grid grid-cols-1 gap-28'>
         {
